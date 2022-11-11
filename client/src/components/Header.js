@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Auth from '../utils/auth';
 
@@ -8,6 +9,9 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  console.log(state)
   return (
     <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
